@@ -9,7 +9,10 @@
 玩家能看到的文字，例如按钮、道具名、任务目标、技能描述、错误提示、字幕、成就说明，不能直接写死在程序代码、UI 预制体或脚本里。要把这些文字集中放进一张“文本表”，程序只记一个固定编号（字符串 ID），显示时按编号取当前语言的文字。这样换语言时只换文本表，不改程序。
 
 ### 1.2 前作漏洞
-<img width="1920" height="1080" alt="LQA-013" src="https://github.com/user-attachments/assets/c831f114-3f1f-42f7-8b1d-318ccb105867" />
+<img width="1923" height="1127" alt="LQA-026" src="https://github.com/user-attachments/assets/4faa8ec1-c4ea-497c-a876-51bdb3edc40a" />
+<img width="1923" height="1127" alt="LQA-028" src="https://github.com/user-attachments/assets/f927be14-96e5-4c12-bb6d-9cc6b15f67f6" />
+<img width="1920" height="1080" alt="LQA-023" src="https://github.com/user-attachments/assets/62f394ed-f964-4bd0-b8ab-6cf120603f3d" />
+
 
 ### 1.3 规范
 
