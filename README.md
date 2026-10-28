@@ -22,7 +22,7 @@
 > 问题编号-30
 
 ### 2.2 句子拼接
-> *以下句子由于拼接出现句中错误大写、缺少空格、。*
+> *以下句子由于拼接出现句中错误大写、缺少空格等问题。*
 <img width="1920" height="1080" alt="LQA-020" src="https://github.com/user-attachments/assets/78e6c8f9-b846-45f1-bbe8-54fa463d7517" />
 
 > 问题编号-22
