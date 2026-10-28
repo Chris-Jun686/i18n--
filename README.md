@@ -8,7 +8,7 @@
 <img width="1923" height="1127" alt="LQA-026" src="https://github.com/user-attachments/assets/4faa8ec1-c4ea-497c-a876-51bdb3edc40a" />
 <img width="1923" height="1127" alt="LQA-028" src="https://github.com/user-attachments/assets/f927be14-96e5-4c12-bb6d-9cc6b15f67f6" />
 <img width="1920" height="1080" alt="LQA-023" src="https://github.com/user-attachments/assets/62f394ed-f964-4bd0-b8ab-6cf120603f3d" />
-> 3处同样表达属性提升的文本出现3种不同的表述
+>3处同样表达属性提升的文本出现3种不同的表述<
 
 ### 1.3 规范
 
@@ -90,7 +90,7 @@ objectiveText.text = Localization.Get("QUEST_001_OBJECTIVE_01");
 <img width="1920" height="1080" alt="LQA-020" src="https://github.com/user-attachments/assets/78e6c8f9-b846-45f1-bbe8-54fa463d7517" />
 <img width="1920" height="1080" alt="LQA-022" src="https://github.com/user-attachments/assets/fa6d5bdb-8c39-46a6-9554-a4a6ab90caad" />
 <img width="1920" height="1080" alt="LQA-024" src="https://github.com/user-attachments/assets/7f092f1e-8129-4ef5-aaa9-d22fa08c9de8" />
-> 由于拼接句子造成句中出现错误大写/缺少空隔
+>由于拼接句子造成句中出现错误大写/缺少空隔<
 
 ### 2.3 规范
 
