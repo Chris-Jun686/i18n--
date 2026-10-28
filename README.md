@@ -8,11 +8,11 @@
 
 玩家能看到的文字，例如按钮、道具名、任务目标、技能描述、错误提示、字幕、成就说明，不能直接写死在程序代码、UI 预制体或脚本里。要把这些文字集中放进一张“文本表”，程序只记一个固定编号（字符串 ID），显示时按编号取当前语言的文字。这样换语言时只换文本表，不改程序。
 
-### 1.2 前作漏洞
+### 1.2 前作纰漏
 <img width="1923" height="1127" alt="LQA-026" src="https://github.com/user-attachments/assets/4faa8ec1-c4ea-497c-a876-51bdb3edc40a" />
 <img width="1923" height="1127" alt="LQA-028" src="https://github.com/user-attachments/assets/f927be14-96e5-4c12-bb6d-9cc6b15f67f6" />
 <img width="1920" height="1080" alt="LQA-023" src="https://github.com/user-attachments/assets/62f394ed-f964-4bd0-b8ab-6cf120603f3d" />
-
+> 3处同样表达属性提升的文本出现3种不同的表述
 
 ### 1.3 规范
 
@@ -89,7 +89,14 @@ objectiveText.text = Localization.Get("QUEST_001_OBJECTIVE_01");
 
 一句给玩家看的话不能拆成“你获得了”“3 个”“铁剑”这种碎片再用代码拼起来。不同语言的语序、复数、量词、空格和标点都不同；应该把整句话放进文本表，用占位符留空，程序只填数量、名字、时间等参数。翻译人员必须看到完整句子，才能调整语序。
 
-### 2.2 规范
+### 2.2 前作纰漏
+
+<img width="1920" height="1080" alt="LQA-020" src="https://github.com/user-attachments/assets/78e6c8f9-b846-45f1-bbe8-54fa463d7517" />
+<img width="1920" height="1080" alt="LQA-022" src="https://github.com/user-attachments/assets/fa6d5bdb-8c39-46a6-9554-a4a6ab90caad" />
+<img width="1920" height="1080" alt="LQA-024" src="https://github.com/user-attachments/assets/7f092f1e-8129-4ef5-aaa9-d22fa08c9de8" />
+> 由于拼接句子造成句中出现错误大写/缺少空隔
+
+### 2.3 规范
 
 1. 玩家可见句子必须整句放进文本表，使用完整句子模板和命名占位符。
 2. 禁止用字符串相加、条件判断、前后缀拼接生成玩家可见自然语言。
@@ -102,7 +109,7 @@ objectiveText.text = Localization.Get("QUEST_001_OBJECTIVE_01");
 9. 禁止隐蔽拼接，例如 `"New " + itemType + " available"`、`"Player " + name + " has joined"`、`"剩余" + time + "秒"`。
 10. 拼接后只用于内部日志或协议字段的，不得直接显示给玩家。
 
-### 2.3 正确以及错误示例
+### 2.4 正确以及错误示例
 
 **示例 1：获得物品**
 
