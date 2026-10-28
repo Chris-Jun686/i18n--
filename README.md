@@ -1,30 +1,38 @@
 # 文本管理与存档
 
-## 1. 定义
+## 1. 关于文本管理与存档
 
-玩家能看到的文字——按钮、道具名、任务目标、技能描述、错误提示、字幕、成就说明、系统提示等——不能直接写死在程序代码、UI 预制体或脚本里。应统一放进“文本表”，程序只引用稳定的字符串 ID，显示时按当前语言查表。文本表是唯一文本来源，换语言只换文本表，不改程序。
-
-玩家可见句子不能拆成“你获得了”“3”“柄”“铁剑”等碎片再用字符串相加或条件判断拼起来。整句应作为完整模板放进文本表，用命名占位符保留动态内容，例如 `情绪增加了{count}`，代码只按占位符名称传参。这样翻译人员能看到完整句意并调整语序、复数、空格和标点。
-
-不是所有文字都需要翻译。内部调试日志、协议字段、正则表达式、文件路径等非玩家文本不进入文本表；玩家自定义名称需要单独保存原文，明确不翻译。存档只保存稳定 ID、数值、状态、时间戳等数据，不保存玩家可见文字；显示时用 ID 查文本表或配置表。否则玩家切换到英文后，旧存档里存的中文“铁剑”仍会显示“铁剑”。
+游戏里给玩家看的每一句话、每个按钮名和道具名，都不要直接写在程序里，而是集中记在一张清单上，程序只记一个固定编号，显示时按编号去清单里取当前语言的文字。一句话要整句记，数字和名字留空由程序填，不能把句子拆开拼。存档时也只记物品、任务等的编号和数量，不记玩家看到的文字，这样换语言后旧存档仍能显示正确语言。
 
 ## 2. 前作纰漏
 
 ### 2.1 文本表与统一表述
 
-<img width="1923" height="1127" alt="LQA-026" src="https://github.com/user-attachments/assets/4faa8ec1-c4ea-497c-a876-51bdb3edc40a" />
-<img width="1923" height="1127" alt="LQA-028" src="https://github.com/user-attachments/assets/f927be14-96e5-4c12-bb6d-9cc6b15f67f6" />
+> *以下 3 处同样表达属性提升的文本出现 3 种不同表述。*
+
 <img width="1920" height="1080" alt="LQA-023" src="https://github.com/user-attachments/assets/62f394ed-f964-4bd0-b8ab-6cf120603f3d" />
 
-> 3 处同样表达属性提升的文本出现 3 种不同表述。
+> 问题编号-23
+<img width="1923" height="1127" alt="LQA-026" src="https://github.com/user-attachments/assets/4faa8ec1-c4ea-497c-a876-51bdb3edc40a" />
+
+> 问题编号-28
+
+<img width="1923" height="1127" alt="LQA-028" src="https://github.com/user-attachments/assets/f927be14-96e5-4c12-bb6d-9cc6b15f67f6" />
+
+> 问题编号-30
 
 ### 2.2 句子拼接
-
+> *以下句子由于拼接出现句中错误大写、缺少空格、。*
 <img width="1920" height="1080" alt="LQA-020" src="https://github.com/user-attachments/assets/78e6c8f9-b846-45f1-bbe8-54fa463d7517" />
+
+> 问题编号-22
 <img width="1920" height="1080" alt="LQA-022" src="https://github.com/user-attachments/assets/fa6d5bdb-8c39-46a6-9554-a4a6ab90caad" />
+
+> 问题编号-24
+
 <img width="1920" height="1080" alt="LQA-024" src="https://github.com/user-attachments/assets/7f092f1e-8129-4ef5-aaa9-d22fa08c9de8" />
 
-> 由于拼接句子，造成句中出现错误大写、缺少空格。
+> 问题编号-26
 
 ## 3. 规范
 
