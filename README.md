@@ -1,4 +1,4 @@
-## 1. 文本
+## 文本
 
 ### 1.1 定义
 
@@ -25,13 +25,19 @@
 
 ### 1.4 正确以及错误示例
 
-**示例 1：道具名**
+**示例 1：属性提升提示**
 
-- 中文原文：铁剑
-- 错误写法：
+- 中文原文：情绪增加了3（其中 `3` 为动态数值，实际显示值由运行时传入）
+- 错误写法一：把整句连同数值写死在代码里。
 
 ```csharp
-itemName.text = "铁剑";
+emotionText.text = "情绪增加了3";
+```
+
+- 错误写法二：把固定文案和动态数值用字符串相加拼起来。
+
+```csharp
+emotionText.text = "情绪增加了" + count;
 ```
 
 - 正确写法：
@@ -40,12 +46,15 @@ itemName.text = "铁剑";
 
 | 字符串 ID | 源文 | 译文 | 上下文/备注 | 长度限制 | 截图/场景 |
 |---|---|---|---|---|---|
-| `ITEM_SWORD_IRON_NAME` | 铁剑 | Iron Sword | 物品名称，背包列表显示 | 20 字符 | 背包界面 |
+| `ATTR_EMOTION_GAINED` | 情绪增加了{count} | Emotion increased by {count} | 属性提升提示，角色属性面板显示；`{count}` 为本次增加的情绪值，整数，示例值 3 | 源文 20 字符；译文 40 字符 | 角色属性面板 |
 
 代码：
 
 ```csharp
-itemName.text = Localization.Get("ITEM_SWORD_IRON_NAME");
+emotionText.text = Localization.Get("ATTR_EMOTION_GAINED", count);
+```
+
+其中 `count` 为运行时传入的数值（例如 3）。文本表保存完整句子模板，翻译人员可调整 `{count}` 在句中的位置；代码只按占位符名称传参，不拼接句子。
 ```
 
 **示例 2：按钮文字**
