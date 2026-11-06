@@ -168,7 +168,7 @@ string safeName = ProfanityFilter.Filter(rawName, currentLocale);
 // 插入句子
 Localization.Get("MSG_DAUGHTER_GAINED_SKILL", new {
     daughter_name = safeName,
-    skill_name = "玉女心经"
+    skill_name = "辟邪剑法"
 });
 ```
 
@@ -213,14 +213,13 @@ Localization.Get("MSG_DAUGHTER_GAINED_SKILL", new {
 ☐ 玩家手动选择的语言是否持久化保存，并在下次启动时优先使用？</br>
 ☐ 玩家名字输入是否处理了 IME 组合输入，而不是在拼音阶段提前提交？</br>
 ☐ 名字长度是否按文本元素（而非字节或 UTF-16 长度）计算和截断？</br>
-☐ 敏感词过滤是否覆盖了中、英双语词库？</br>
+☐ 敏感词过滤是否覆盖了所有目标语词库？</br>
 ☐ 名字插入句子时，是否作为命名占位符传入，语法变化是否交给第6章的处理机制？
 
 ---
 
 ### 8.6 参考文献
 
-- IGDA 本地化兴趣小组《游戏本地化最佳实践》 *Best Practices for Game Localization*（UI 灵活性、文本膨胀、Unicode 与字符串外置）
-- Unity 官方文档 — Startup Locale Selectors（System Locale Selector 与 Player Pref Locale Selector）
-- Unity 官方文档 — TextMeshPro Line Breaking & Rich Text（自动换行、防断行标签与富文本）
-- Unicode 标准附件 #29 (UAX #29) — Text Segmentation（文本元素边界与多语言字符截断）
+* IGDA本地化兴趣小组《游戏本地化最佳实践》*[Best Practices for Game Localization](https://igda.org/resources-archive/
+* Unity引擎本地化文档 **[Unity文档](https://docs.unity3d.com/Packages/com.unity.localization@1.4/manual/LocalizationSettings.html)**
+* Unicode CLDR 项目（通用本地化数据存储库） **[CLDR](https://cldr.unicode.org/)**
