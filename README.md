@@ -2,7 +2,7 @@
 
 ### 8.1 关于界面排版与玩家输入
 
-本章讲的是两件容易被低估的事：第一，界面排版不能按“当前语言看起来刚好”来设计，必须为中、英等不同语言的文本伸缩、分辨率变化和书写习惯预留空间；第二，玩家输入的内容（尤其是女儿的名字）会进入大量台词，必须同时处理输入法兼容、长度约束、敏感词过滤，以及插入句子后的语法适配。目的是让界面在任何语言下不溢出、不裁切，让玩家的输入在任何语言环境下都安全、可用、不出语法笑话。
+本章讲的是两件容易被低估的事：第一，界面排版不能按“当前语言看起来刚好”来设计，必须为中、英等不同语言的文本伸缩、分辨率变化和书写习惯预留空间；第二，玩家输入的内容（尤其是女儿的名字）会进入大量台词，必须同时处理输入法兼容、长度约束、敏感词过滤，以及插入句子后的语法适配。目的是让界面在任何语言下不溢出、不裁切，让玩家的输入在任何语言环境下都安全、可用、不出语法错误。
 
 ---
 
@@ -76,9 +76,9 @@ fitter.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
 fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
 ```
 
-#### 8.4.2 自动换行与防孤儿行
+#### 8.4.2 自动换行
 
-**示例：剧情旁白字幕（对应截图问题1）**
+**示例：剧情旁白字幕**
 
 - 中文原文：今天是我与妻子相遇十周年。
 - 错误写法：在文本表中写死换行，或者任由系统在不该断的地方断行。
@@ -97,7 +97,7 @@ SUBTITLE_01_EN = Today marks ten years since meeting my\u00A0wife,
 
 #### 8.4.3 溢出兜底与缩放
 
-**示例：底部旁白框（对应截图问题2）**
+**示例：底部旁白框**
 
 - 错误写法：文本超出屏幕边界，直接画进黑边里。
 ```csharp
@@ -177,14 +177,14 @@ Localization.Get("MSG_DAUGHTER_GAINED_SKILL", new {
 
 ---
 
-### 8.5 使用 Unity 引擎时需注意
+> 使用 Unity 引擎时需注意
 
 **UI 自适应与文本膨胀测试**
 - 使用 `LayoutElement` 的 `minWidth` / `minHeight` 配合 `ContentSizeFitter`，避免固定 `sizeDelta` 导致译文溢出。
 - 对于 PC 游戏，必须测试不同分辨率下的 UI 表现，避免全屏切换或窗口拉伸时文本错位。
 - Unity 提供 Pseudolocalization（伪本地化）功能，可通过 Class Expander 类工具将字符串按比例（如英文 +30%）膨胀，在开发期直接扫描布局问题。
 
-**自动换行、防断行与溢出兜底（字幕场景）**
+**自动换行、防断行与溢出兜底**
 - `TextMeshProUGUI` 的 `enableWordWrapping = true` 应作为正文默认配置。
 - 对于禁止拆分的词组（如避免 `wife` 单独成行），可在文本表中插入 Unicode 不换行空格 `\u00A0`（NBSP）（对应 R7-07）。
 - **锚点设置**：字幕/对话框的 `RectTransform` 锚点（Anchors）必须设置在屏幕底部（Bottom），并设置 `Pivot` 为底部（Y=0）。这样当文本增多时，文本框会**向上方扩展**，而不是向下长进屏幕底部的黑边里。
@@ -201,7 +201,7 @@ Localization.Get("MSG_DAUGHTER_GAINED_SKILL", new {
 
 ---
 
-### 8.6 检查清单
+### 8.5 检查清单
 
 ☐ 按钮和标签是否使用了固定宽度，而不是最小宽度或自适应？</br>
 ☐ 长文本区域是否使用了固定高度，而不是最小高度？</br>
@@ -218,7 +218,7 @@ Localization.Get("MSG_DAUGHTER_GAINED_SKILL", new {
 
 ---
 
-### 8.7 参考文献
+### 8.6 参考文献
 
 - IGDA 本地化兴趣小组《游戏本地化最佳实践》 *Best Practices for Game Localization*（UI 灵活性、文本膨胀、Unicode 与字符串外置）
 - Unity 官方文档 — Startup Locale Selectors（System Locale Selector 与 Player Pref Locale Selector）
