@@ -215,6 +215,6 @@ Localization.Get("MSG_DAUGHTER_GAINED_SKILL", new {
 
 ### 8.6 参考文献
 
-* IGDA本地化兴趣小组《游戏本地化最佳实践》*[Best Practices for Game Localization](https://igda.org/resources-archive/
+* IGDA本地化兴趣小组《游戏本地化最佳实践》*[Best Practices for Game Localization](https://igda.org/resources-archive/best-practices-for-game-localization/)*
 * Unity引擎本地化文档 **[Unity文档](https://docs.unity3d.com/Packages/com.unity.localization@1.4/manual/LocalizationSettings.html)**
 * Unicode CLDR 项目（通用本地化数据存储库） **[CLDR](https://cldr.unicode.org/)**
