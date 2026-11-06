@@ -170,12 +170,6 @@ Localization.Get("MSG_DAUGHTER_GAINED_SKILL", new {
     daughter_name = safeName,
     skill_name = "辟邪剑法"
 });
-```
-
-> 文本表（中文）：`MSG_DAUGHTER_GAINED_SKILL = {daughter_name} 获得了新技能：{skill_name}。`</br>  
-> 文本表（英文）：`MSG_DAUGHTER_GAINED_SKILL = {daughter_name} learned a new skill: {skill_name}.`  
-
----
 
 > 使用 Unity 引擎时需注意
 
