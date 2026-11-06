@@ -169,7 +169,7 @@ string safeName = ProfanityFilter.Filter(rawName, currentLocale);
 Localization.Get("MSG_DAUGHTER_GAINED_SKILL", new {
     daughter_name = safeName,
     skill_name = "辟邪剑法"
-})
+})；
 ```
 
 > 使用 Unity 引擎时需注意
@@ -181,9 +181,9 @@ Localization.Get("MSG_DAUGHTER_GAINED_SKILL", new {
 
 **自动换行、防断行与溢出兜底**
 - `TextMeshProUGUI` 的 `enableWordWrapping = true` 应作为正文默认配置。
-- 对于禁止拆分的词组（如避免 `wife` 单独成行），可在文本表中插入 Unicode 不换行空格 `\u00A0`（NBSP）（对应 R7-07）。
+- 对于禁止拆分的词组（如避免 `wife` 单独成行），可在文本表中插入 Unicode 不换行空格 `\u00A0`（NBSP）。
 - **锚点设置**：字幕/对话框的 `RectTransform` 锚点（Anchors）必须设置在屏幕底部（Bottom），并设置 `Pivot` 为底部（Y=0）。这样当文本增多时，文本框会**向上方扩展**，而不是向下长进屏幕底部的黑边里。
-- **溢出处理**：TMP 的 `Overflow` 属性绝对不能设为 `Overflow`（直接画到框外）。必须设置为 `Ellipsis`（截断并显示省略号），或开启 `enableAutoSizing`（字号自动缩小以适配框体）（对应 R7-10）。
+- **溢出处理**：TMP 的 `Overflow` 属性绝对不能设为 `Overflow`（直接画到框外）。必须设置为 `Ellipsis`（截断并显示省略号），或开启 `enableAutoSizing`（字号自动缩小以适配框体）。
 - **长文本兜底**：对于很长的剧情旁白，建议给字幕框挂载 `ScrollRect` 组件，或实现“按任意键翻页/分页显示”机制，严禁让文字硬挤在屏幕内。
 
 **输入法与玩家输入**
