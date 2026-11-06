@@ -40,11 +40,17 @@
 
 ### 8.3 前作发生了什么
 
-#### 8.3.1 文本膨胀与裁切/溢出问题
+#### 8.3.1 文本膨胀
 
+<img width="600" height="280" alt="LQA-014" src="https://github.com/user-attachments/assets/53a05bc7-36fb-4dd1-9f6b-141f2c398c35" />
 
-#### 8.3.2 手动换行与富文本问题
+> 底部文字未留足充裕空间，导致处于屏幕黑边不可见
 
+#### 8.3.2 手动换行
+
+<img width="600" height="280" alt="LQA-014" src="https://github.com/user-attachments/assets/53a05bc7-36fb-4dd1-9f6b-141f2c398c35" />
+
+> 由于第一句未设置自动换行，导致第二行只有wife居中出现，影响观感
 
 #### 8.3.3 输入法与玩家输入问题
 
