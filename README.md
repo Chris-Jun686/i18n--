@@ -170,7 +170,7 @@ Localization.Get("MSG_DAUGHTER_GAINED_SKILL", new {
     daughter_name = safeName,
     skill_name = "辟邪剑法"
 })
-;
+```
 
 > 使用 Unity 引擎时需注意
 
